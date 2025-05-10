@@ -1,14 +1,16 @@
 /* Variables globales */
 :root {
-    --primary-color: #FF6B6B;
-    --secondary-color: #4ECDC4;
-    --accent-color: #FFE66D;
-    --text-color: #2C3E50;
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --accent-color: #E74C3C;
+    --text-color: #333;
     --background-color: #F7F9FC;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition-speed: 0.3s;
     --gradient-primary: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
     --gradient-secondary: linear-gradient(135deg, #4ECDC4 0%, #6EE7DE 100%);
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
 }
 
 /* Reset y estilos base */
@@ -37,11 +39,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: white;
-    box-shadow: var(--card-shadow);
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
-    padding: 1rem 0;
-    border-bottom: 2px solid #FFE66D22;
+    padding: 1rem 20px;
 }
 
 .navbar .container {
@@ -51,13 +52,9 @@ body {
 }
 
 .logo {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    letter-spacing: 1px;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -69,16 +66,12 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
-    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    background: var(--gradient-primary);
-    color: #fff;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -126,23 +119,19 @@ body {
 }
 
 .cta-button {
-    background: var(--gradient-primary);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
     border: none;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all var(--transition-speed);
+    border-radius: 5px;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    box-shadow: 0px 4px 24px 0px rgba(255, 107, 107, 0.10);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.18);
+    background-color: #357ABD;
 }
 
 /* Sección "¿Cómo funciona?" */
@@ -309,6 +298,289 @@ body {
     }
 }
 
+/* Sección de precios */
+.pricing {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.pricing h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.pricing-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.features {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.features li {
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+.features i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Sección de contacto */
+.contact {
+    padding: 100px 0;
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    padding: 20px;
+}
+
+.contact-info {
+    padding: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.social-media {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Pricing Hero Section */
+.pricing-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    margin-bottom: 40px;
+}
+
+.pricing-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.pricing-hero .subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+.pricing-hero .subtitle strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Tabla Comparativa */
+.comparison-table {
+    margin-top: 80px;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.comparison-table h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.comparison-table th {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.comparison-table i.fa-check {
+    color: var(--primary-color);
+}
+
+.comparison-table i.fa-times {
+    color: #ccc;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    color: #eee;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #eee;
+    font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
@@ -325,5 +597,188 @@ body {
     
     .tests-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .pricing-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .pricing-hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .comparison-table {
+        overflow-x: auto;
+    }
+    
+    .comparison-table table {
+        min-width: 800px;
+    }
+}
+
+/* B2B Hero Section */
+.b2b-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    margin-bottom: 40px;
+}
+
+.b2b-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b2b-hero .subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+/* Beneficios B2B */
+.benefits-b2b {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.benefit-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Contact B2B Styles */
+.contact .contact-info h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.info-list {
+    margin-bottom: 3rem;
+}
+
+.info-list .info-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-list .info-item i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.contact-direct {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.contact-direct h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-method i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-form h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .b2b-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .b2b-hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-direct {
+        padding: 1.5rem;
     }
 } 
