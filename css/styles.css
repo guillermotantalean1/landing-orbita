@@ -359,7 +359,8 @@ body {
 
 /* Sección de contacto */
 .contact {
-    padding: 100px 0;
+    padding: 120px 0 60px;
+    margin-top: 0;
 }
 
 .contact h1 {
